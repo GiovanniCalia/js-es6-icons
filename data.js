@@ -132,7 +132,7 @@ eleCards.append(container);*/
 	console.log(container)
 }*/
 
-function insertArray(postsArray, createCards){
+function insertPosts(postsArray, createCards){
 	createCards.innerHTML = "";
 
 	postsArray.forEach(element => {
@@ -149,12 +149,20 @@ function insertArray(postsArray, createCards){
 	});
 }
 
-insertArray(posts, eleCards);
+insertPosts(posts, eleCards);
 
-const options = document.getElementById("select-option");
+const select = document.getElementById("select-option");
 
-options.addEventListener("change", function(){
-	
+select.addEventListener("change", function(){
+	const options = select.value;
+	console.log(options)
+
+	if (options == "animal"){
+		console.log("animali")
+	} else{
+		console.log("altro")
+	}
+
 })
 
 
