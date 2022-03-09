@@ -115,11 +115,24 @@ const posts = [
 
 
 const eleCards = document.querySelector(".cards");
-const container = document.createElement(("div"));
+/*const container = document.createElement(("div"));
 container.classList.add("container");
-eleCards.append(container);
-console.log(container);
-container.innerHTML = `<i class="fas fa-cat box" style="color: "></i>
+eleCards.append(container);*/
+
+for (i = 0; i < posts.length; i++){
+    const container = document.createElement(("div"));
+    container.classList.add("container");
+
+	container.innerHTML = `<i class="${posts[i].family} ${posts[i].prefix}${posts[i].name} box" style="color: ${posts[i].color}"></i>
+                          <span>${posts[i].name}</span>
+	`;
+	
+	eleCards.append(container);
+	console.log(container)
+}
+
+/*container.innerHTML = `<i class="${posts[0].family} ${posts[0].prefix}${posts[0].name} box" style="color: ${posts[0].color}"></i>
+                       <span>${posts[0].name}</span>
                        <i class="fas fa-crow box"></i>
 					   <i class="fas fa-dog box"></i>
                        <i class="fas fa-dove box"></i>
@@ -135,5 +148,5 @@ container.innerHTML = `<i class="fas fa-cat box" style="color: "></i>
                        <i class="fas fa-user-graduate box"></i>
                        <i class="fas fa-user-ninja box"></i>
                        <i class="fas fa-user-secret box"></i>
-`;
+`;*/
 
