@@ -115,11 +115,12 @@ const posts = [
 
 
 const eleCards = document.querySelector(".cards");
+
 /*const container = document.createElement(("div"));
 container.classList.add("container");
 eleCards.append(container);*/
 
-for (i = 0; i < posts.length; i++){
+/*for (i = 0; i < posts.length; i++){
     const container = document.createElement(("div"));
     container.classList.add("container");
 
@@ -129,7 +130,38 @@ for (i = 0; i < posts.length; i++){
 	
 	eleCards.append(container);
 	console.log(container)
+}*/
+
+function insertArray(postsArray, createCards){
+	createCards.innerHTML = "";
+
+	postsArray.forEach(element => {
+		const container = document.createElement(("div"));
+    container.classList.add("container");
+
+	container.innerHTML = `<i class="${element.family} ${element.prefix}${element.name} box" style="color: ${element.color}"></i>
+                          <span>${element.name}</span>
+	`;
+	
+	eleCards.append(container);
+	console.log(container);
+		
+	});
 }
+
+insertArray(posts, eleCards);
+
+const options = document.getElementById("select-option");
+
+options.addEventListener("change", function(){
+	
+})
+
+
+
+
+
+
 
 /*container.innerHTML = `<i class="${posts[0].family} ${posts[0].prefix}${posts[0].name} box" style="color: ${posts[0].color}"></i>
                        <span>${posts[0].name}</span>
@@ -149,4 +181,3 @@ for (i = 0; i < posts.length; i++){
                        <i class="fas fa-user-ninja box"></i>
                        <i class="fas fa-user-secret box"></i>
 `;*/
-
