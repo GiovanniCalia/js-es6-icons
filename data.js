@@ -1,4 +1,4 @@
-[
+const posts = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,28 @@
 		color: 'blue'
 	}
 ];
+
+
+const eleCards = document.querySelector(".cards");
+const container = document.createElement(("div"));
+container.classList.add("container");
+eleCards.append(container);
+console.log(container);
+container.innerHTML = `<i class="fas fa-cat box" style="color: "></i>
+                       <i class="fas fa-crow box"></i>
+					   <i class="fas fa-dog box"></i>
+                       <i class="fas fa-dove box"></i>
+                       <i class="fas fa-dragon box"></i>
+                       <i class="fas fa-horse box"></i>
+                       <i class="fas fa-hippo box"></i>
+                       <i class="fas fa-fish box"></i>
+                       <i class="fas fa-carrot box"></i>
+                       <i class="fas fa-apple-alt box"></i>
+                       <i class="fas fa-lemon box"></i>
+                       <i class="fas fa-pepper-hot box"></i>
+                       <i class="fas fa-user-astronaut box"></i>
+                       <i class="fas fa-user-graduate box"></i>
+                       <i class="fas fa-user-ninja box"></i>
+                       <i class="fas fa-user-secret box"></i>
+`;
+
