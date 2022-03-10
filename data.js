@@ -115,6 +115,7 @@ const posts = [
 
 
 const eleCards = document.querySelector(".cards");
+const select = document.getElementById("select-option");
 
 function insertPosts(postsArray, createCards){
 	createCards.innerHTML = "";
@@ -128,14 +129,11 @@ function insertPosts(postsArray, createCards){
 	    `;
 	
 	eleCards.append(container);
-	console.log(container);
-		
+	console.log(container);	
 	});
 }
 
 insertPosts(posts, eleCards);
-
-const select = document.getElementById("select-option");
 
 select.addEventListener("change", function(){
 	const options = select.value;
@@ -153,28 +151,3 @@ select.addEventListener("change", function(){
 		insertPosts(posts, eleCards);
 	}
 });
-
-
-
-
-
-
-
-/*container.innerHTML = `<i class="${posts[0].family} ${posts[0].prefix}${posts[0].name} box" style="color: ${posts[0].color}"></i>
-                       <span>${posts[0].name}</span>
-                       <i class="fas fa-crow box"></i>
-					   <i class="fas fa-dog box"></i>
-                       <i class="fas fa-dove box"></i>
-                       <i class="fas fa-dragon box"></i>
-                       <i class="fas fa-horse box"></i>
-                       <i class="fas fa-hippo box"></i>
-                       <i class="fas fa-fish box"></i>
-                       <i class="fas fa-carrot box"></i>
-                       <i class="fas fa-apple-alt box"></i>
-                       <i class="fas fa-lemon box"></i>
-                       <i class="fas fa-pepper-hot box"></i>
-                       <i class="fas fa-user-astronaut box"></i>
-                       <i class="fas fa-user-graduate box"></i>
-                       <i class="fas fa-user-ninja box"></i>
-                       <i class="fas fa-user-secret box"></i>
-`;*/
