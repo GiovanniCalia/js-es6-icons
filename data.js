@@ -129,7 +129,6 @@ function insertPosts(postsArray, createCards){
 	    `;
 	
 	eleCards.append(container);
-	console.log(container);	
 	});
 }
 
@@ -137,7 +136,6 @@ insertPosts(posts, eleCards);
 
 select.addEventListener("change", function(){
 	const options = select.value;
-	console.log(options)
 
 	if (options != "all"){
 		const filterCards = posts.filter((postArgument) => {
