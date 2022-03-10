@@ -116,32 +116,16 @@ const posts = [
 
 const eleCards = document.querySelector(".cards");
 
-/*const container = document.createElement(("div"));
-container.classList.add("container");
-eleCards.append(container);*/
-
-/*for (i = 0; i < posts.length; i++){
-    const container = document.createElement(("div"));
-    container.classList.add("container");
-
-	container.innerHTML = `<i class="${posts[i].family} ${posts[i].prefix}${posts[i].name} box" style="color: ${posts[i].color}"></i>
-                          <span>${posts[i].name}</span>
-	`;
-	
-	eleCards.append(container);
-	console.log(container)
-}*/
-
 function insertPosts(postsArray, createCards){
 	createCards.innerHTML = "";
 
 	postsArray.forEach(element => {
 		const container = document.createElement(("div"));
-    container.classList.add("container");
+        container.classList.add("container");
 
-	container.innerHTML = `<i class="${element.family} ${element.prefix}${element.name} box" style="color: ${element.color}"></i>
-                          <span>${element.name}</span>
-	`;
+	    container.innerHTML = `<i class="${element.family} ${element.prefix}${element.name} box" style="color: ${element.color}"></i>
+                              <span>${element.name}</span>
+	    `;
 	
 	eleCards.append(container);
 	console.log(container);
@@ -157,13 +141,18 @@ select.addEventListener("change", function(){
 	const options = select.value;
 	console.log(options)
 
-	if (options == "animal"){
-		console.log("animali")
-	} else{
-		console.log("altro")
-	}
+	if (options != "all"){
+		const filterCards = posts.filter((postArgument) => {
+			if (postArgument.type == options){
+				return true;
+			}	
+		});
 
-})
+	    insertPosts(filterCards, eleCards);
+	} else{
+		insertPosts(posts, eleCards);
+	}
+});
 
 
 
